@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  # PostgreSQL database
+  postgres:
+    image: postgres:12.4-alpine
+    env_file: docker.env
+    ports:
+      - 5432:5432
+
+  # Calypso application
+  rook:
+    build:
+      context: .
+      dockerfile: docker/rook.dockerfile
+    image: rook
+    command: /start-reload.sh
+    volumes:
+      - ./rook:/rook
+    ports:
+      - 8000:8000
+    depends_on:
+      - postgres
