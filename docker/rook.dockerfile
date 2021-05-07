@@ -1,6 +1,9 @@
 FROM python:3.9
 
-RUN pip install --no-cache-dir "uvicorn[standard]" gunicorn fastapi
+RUN pip install "uvicorn[standard]" gunicorn
+
+COPY ./requirements.txt /requirements.txt
+RUN pip install -r requirements.txt
 
 COPY ./docker/start.sh /start.sh
 RUN chmod +x /start.sh
