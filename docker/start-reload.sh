@@ -11,7 +11,7 @@ PORT=${PORT:-8000}
 LOG_LEVEL=${LOG_LEVEL:-info}
 
 # If there's a prestart.sh script in the /app directory or other path specified, run it before starting
-PRE_START_PATH=${PRE_START_PATH:-/app/prestart.sh}
+PRE_START_PATH=${PRE_START_PATH:-/rook/prestart.sh}
 echo "Checking for script in $PRE_START_PATH"
 if [ -f $PRE_START_PATH ] ; then
     echo "Running script $PRE_START_PATH"

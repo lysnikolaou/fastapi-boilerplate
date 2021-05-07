@@ -10,8 +10,8 @@ DEFAULT_GUNICORN_CONF=/gunicorn_conf.py
 export GUNICORN_CONF=${GUNICORN_CONF:-$DEFAULT_GUNICORN_CONF}
 export WORKER_CLASS=${WORKER_CLASS:-"uvicorn.workers.UvicornWorker"}
 
-# If there's a prestart.sh script in the /app directory or other path specified, run it before starting
-PRE_START_PATH=${PRE_START_PATH:-/prestart.sh}
+# If there's a prestart.sh script in the directory or other path specified, run it before starting
+PRE_START_PATH=${PRE_START_PATH:-/rook/prestart.sh}
 echo "Checking for script in $PRE_START_PATH"
 if [ -f $PRE_START_PATH ] ; then
     echo "Running script $PRE_START_PATH"

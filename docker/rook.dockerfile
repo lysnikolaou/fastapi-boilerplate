@@ -15,6 +15,9 @@ RUN chmod +x /start-reload.sh
 
 COPY ./rook /rook
 
+COPY ./alembic /alembic
+COPY ./alembic.ini /alembic.ini
+
 EXPOSE 8000
 
 # Run the start script, it will check for an /app/prestart.sh script (e.g. for migrations)
