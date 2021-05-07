@@ -14,9 +14,6 @@ COPY ./docker/start-reload.sh /start-reload.sh
 RUN chmod +x /start-reload.sh
 
 COPY ./rook /rook
-WORKDIR /rook/
-
-ENV PYTHONPATH=/rook
 
 EXPOSE 8000
 

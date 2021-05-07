@@ -9,6 +9,7 @@ services:
 
   # Calypso application
   rook:
+    env_file: docker.env
     build:
       context: .
       dockerfile: docker/rook.dockerfile
